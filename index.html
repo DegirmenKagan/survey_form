@@ -9,5 +9,40 @@
   <body>
     <h1 id="title">Survey Form Example</h1>
     <p id="description">Thank you for choosing us. Please inform us more.</p>
+    <form id="survey-form" action="">
+      <fieldset>
+        <label id="name-label" for="name">
+          Name
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+          />
+        </label>
+        <label id="email-label" for="email">
+          Email
+          <input
+            required
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your Email"
+          />
+        </label>
+        <label id="number-label" for="number">
+          Age<label id="optional-label">(optional)</label>
+          <input
+            min="13"
+            max="120"
+            type="number"
+            name="number"
+            id="number"
+            placeholder="Age"
+          />
+        </label>
+      </fieldset>
+    </form>
   </body>
 </html>
