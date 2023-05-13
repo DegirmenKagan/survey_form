@@ -7,111 +7,151 @@
     <title>Survey Form Example</title>
   </head>
   <body>
-    <h1 id="title">Survey Form Example</h1>
-    <p id="description">Thank you for choosing us. Please inform us more.</p>
-    <form id="survey-form" action="">
-      <fieldset>
-        <label id="name-label" for="name">
-          Name
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Survey Form Example</h1>
+        <p id="description" class="description text-center">
+          Thank you for choosing us. Please inform us more.
+        </p>
+      </header>
+      <form id="survey-form">
+        <div class="form-group">
+          <label id="name-label" for="name"> Name </label>
           <input
-            required
             type="text"
             name="name"
             id="name"
+            class="form-control"
             placeholder="Enter your name"
-          />
-        </label>
-        <label id="email-label" for="email">
-          Email
-          <input
             required
+          />
+        </div>
+        <div class="form-group">
+          <label id="email-label" for="email"> Email </label>
+          <input
             type="email"
             name="email"
             id="email"
+            class="form-control"
             placeholder="Enter your Email"
+            required
           />
-        </label>
-        <label id="number-label" for="number">
-          Age<label id="optional-label">(optional)</label>
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number">
+            Age
+            <span class="clue">(optional)</span>
+          </label>
           <input
+            type="number"
+            name="age"
+            id="number"
             min="13"
             max="120"
-            type="number"
-            name="number"
-            id="number"
+            class="form-control"
             placeholder="Age"
           />
-        </label>
-      </fieldset>
-      <fieldset>
-        <select name="dropdown" id="dropdown">
-          <option value="">Choose an option</option>
-          <option value="1">Cats</option>
-          <option value="2">Dogs</option>
-          <option value="3">Birds</option>
-        </select>
-        <div>
-          <label>Would you recomment us to a friend?</label>
+        </div>
+
+        <div class="form-group">
+          <p>Which pet would you prefer?</p>
+          <select id="dropdown" name="pet" class="form-control" required>
+            <option disabled selected value>Choose a pet</option>
+            <option value="cats">Cats</option>
+            <option value="dogs">Dogs</option>
+            <option value="birds">Birds</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>Would you recomment us to a friend?</p>
           <label>
             <input
+              name="user-recommend"
+              value="definitely"
               type="radio"
-              name="radio-recommend"
-              id="radio-definitely"
-              value="2"
+              class="input-radio"
+              checked
             />
             Definitely
           </label>
           <label>
             <input
+              name="user-recommend"
+              value="maybe"
               type="radio"
-              name="radio-recommend"
-              id="radio-maybe"
-              value="1"
+              class="input-radio"
             />
             Maybe
           </label>
           <label>
             <input
+              name="user-recommend"
+              value="not-sure"
               type="radio"
-              name="radio-recommend"
-              id="radio-not-sure"
-              value="0"
+              class="input-radio"
             />
             Not Sure
           </label>
         </div>
-        <div class="checkBoxArea">
-          <label for="feProjects">
+        <div class="form-group">
+          <p>What is your favorite OS?</p>
+          <select id="most-like" name="mostLike" class="form-control" required>
+            <option disabled selected value>Choose an OS</option>
+            <option value="macos">MacOS</option>
+            <option value="windows">Windows</option>
+            <option value="ubuntu">Ubuntu</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>
+            In which field you will focus more?
+            <span class="clue">(Check all that apply)</span>
+          </p>
+          <label>
             <input
+              name="prefer"
+              value="front-end-projects"
               type="checkbox"
-              name="feProjects"
-              id="feProjects"
-              value="feProjects"
+              class="input-checkbox"
             />
             Front-end Projects
           </label>
-          <label for="beProjects">
+          <label>
             <input
+              name="prefer"
+              value="back-end-projects"
               type="checkbox"
-              name="beProjects"
-              id="beProjects"
-              value="beProjects"
+              class="input-checkbox"
             />
             Back-end Projects
           </label>
-          <label for="dataVis">
+          <label>
             <input
+              name="prefer"
+              value="data-visualization"
               type="checkbox"
-              name="dataVis"
-              id="dataVis"
-              value="dataVis"
+              class="input-checkbox"
             />
             Data Visualization
           </label>
         </div>
-        <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-      </fieldset>
-      <button id="submit" type="submit">Submit</button>
-    </form>
+        <div class="form-group">
+          <p>Tell us more suggestions.</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="comment"
+            placeholder="Enter your comment here..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
